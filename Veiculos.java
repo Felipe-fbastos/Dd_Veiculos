@@ -4,16 +4,16 @@ public class Veiculos {
     private double valorAdicional;
     private double horas;
 
-    public double doTotal(){
+    public double doTotal() {
 
-        double valorPagar = valorHora + valorAdicional *(horas -1 );
+        double valorPagar = valorHora + valorAdicional * (horas - 1);
 
         return valorPagar;
 
 
     }
 
-    private String doViewCupom(){
+    private String doViewCupom() {
 
         return "R$" + doTotal();
     }

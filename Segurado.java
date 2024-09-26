@@ -1,4 +1,4 @@
-public class Segurado  extends Veiculos implements ISeguroService {
+public class Segurado extends Veiculos implements ISeguroService {
 
     private double seguro;
 
@@ -7,22 +7,23 @@ public class Segurado  extends Veiculos implements ISeguroService {
         this.seguro = seguro;
     }
 
-    public double doTotal(){
+    public double doTotal() {
 
         double valorEstacionamento = super.doTotal() - doDesconto();
 
         return valorEstacionamento;
     }
 
-    public String doViewCumpom(){
+    public String doViewCumpom() {
 
-        return "R$ " + doTotal() + "Desconto aplicado: " + doDesconto();
+        return "Valor sem desconto " + super.doTotal() + "\nDesconto aplicado: " + doDesconto() + "\nTotal R$ " + doTotal();
     }
 
     @Override
     public double doDesconto() {
 
-        double descontoVeiculos =  super.doTotal() * seguro / 100;
+        double descontoVeiculos = super.doTotal() * seguro / 100;
+
 
         return descontoVeiculos;
     }
